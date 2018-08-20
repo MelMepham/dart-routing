@@ -4,6 +4,8 @@ import 'route_paths.dart';
 
 import 'home/home_component.template.dart' as home_template;
 import 'settings/settings_component.template.dart' as settings_template;
+import 'page_not_found/not_found_component.template.dart' as not_found_template;
+
 
 export 'route_paths.dart';
 
@@ -22,5 +24,15 @@ class Routes {
     home,
     settings,
    
+    RouteDefinition.redirect(
+      path: '',
+      redirectTo: RoutePaths.home.toUrl(),
+      useAsDefault: true,
+    ),
+
+    RouteDefinition(
+      path: '.+',
+      component: not_found_template.NotFoundComponentNgFactory,
+    ),
   ];
 }
