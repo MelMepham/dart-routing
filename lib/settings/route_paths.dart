@@ -7,5 +7,9 @@ class RoutePaths {
     path: 'profile',
     parent: _parent.RoutePaths.settings,
   );
+  static final edit_profile = RoutePath(
+    path: '${profile.path}/edit',
+    parent: _parent.RoutePaths.settings,
+  );
 
 }

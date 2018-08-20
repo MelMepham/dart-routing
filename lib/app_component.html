@@ -1,2 +1,9 @@
 <h1>App</h1>
+<nav>
+    <a [routerLink]="RoutePaths.home.toUrl()"
+       [routerLinkActive]="'active'">home</a>
+    <a [routerLink]="RoutePaths.settings.toUrl()"
+       [routerLinkActive]="'active'">settings</a>
+  </nav>
+
 <router-outlet [routes]="Routes.all"></router-outlet>
