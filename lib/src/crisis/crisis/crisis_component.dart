@@ -6,7 +6,7 @@ import 'package:angular_router/angular_router.dart';
 
 import '../crisis.dart';
 import '../crisis_service.dart';
-import '../../route_paths.dart';
+import '../route_paths.dart';
 
 @Component(
   selector: 'my-crisis',
@@ -29,6 +29,5 @@ class CrisisComponent implements OnActivate {
   }
 
   Future<NavigationResult> goBack() => _router.navigate(
-    RoutePaths.crises.toUrl(),
-    NavigationParams(queryParameters: {idParam: '${crisis.id}'}));
+   RoutePaths.home.toUrl());
 }

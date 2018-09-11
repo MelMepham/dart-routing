@@ -9,4 +9,9 @@ class RoutePaths {
     path: ':${_parent.idParam}',
     parent: _parent.RoutePaths.crises,
   );
+  static final home = RoutePath(
+  path: '',
+  parent: _parent.RoutePaths.crises,
+  useAsDefault: true,
+);
 }
