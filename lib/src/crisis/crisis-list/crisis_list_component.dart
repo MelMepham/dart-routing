@@ -4,20 +4,35 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import '../routes.dart';
 
-
 import '../crisis.dart';
 import '../crisis_service.dart';
+import '../dialog_service.dart';
+
 
 @Component(
     selector: 'my-crises',
     templateUrl: 'crisis_list_component.html',
-    styleUrls: ['crisis_list_component.css'],
-    directives: [coreDirectives, RouterOutlet],
-    pipes: [commonPipes],
-    exports: [RoutePaths, Routes],
-    providers: [ClassProvider(CrisisService)])
-
+    styleUrls: [
+      'crisis_list_component.css'
+    ],
+    directives: [
+      coreDirectives,
+      RouterOutlet
+    ],
+    pipes: [
+      commonPipes
+    ],
+    exports: [
+      RoutePaths,
+      Routes
+    ],
+    providers: [
+      ClassProvider(CrisisService),
+      ClassProvider(DialogService),
+    ])
+    
 class CrisisListComponent implements OnActivate {
+  final DialogService _dialogService;
   final CrisisService _crisisService;
   final Router _router;
   List<Crisis> crises;
@@ -44,8 +59,8 @@ class CrisisListComponent implements OnActivate {
 
   void onSelect(Crisis crisis) => _gotoDetail(crisis.id);
 
-  String _crisisUrl(int id) => RoutePaths.crisis.toUrl(parameters: {idParam: '$id'});
-
+  String _crisisUrl(int id) =>
+      RoutePaths.crisis.toUrl(parameters: {idParam: '$id'});
 
   Future<NavigationResult> _gotoDetail(int id) =>
       _router.navigate(_crisisUrl(id));
