@@ -4,7 +4,7 @@ import 'route_paths.dart';
 
 import 'page_not_found/not_found_component.template.dart' as not_found_template;
 import 'hero/hero-list/hero_list_component.template.dart' as hero_list_template;
-import 'crisis-list/crisis_list_component.template.dart'
+import 'crisis/crisis-list/crisis_list_component.template.dart'
     as crisis_list_template;
 import 'hero/hero/hero_component.template.dart' as hero_template;
 
